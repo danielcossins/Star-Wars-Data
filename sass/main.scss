@@ -15,6 +15,26 @@ body{
   margin: 0 auto;
 }
 
+.background{
+  background-color: $primary;
+}
+
+.font{
+  color: $primary;
+}
+
+.infoDiv{
+  border: 10px solid $primary;
+  // background-color: $primary;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+// .transparent{
+//   opacity: 0.5;
+// }
+
 footer{
   background-color: $primary;
 }

@@ -10,6 +10,18 @@ body {
   text-align: center;
   margin: 0 auto; }
 
+.background {
+  background-color: #FFD500; }
+
+.font {
+  color: #FFD500; }
+
+.infoDiv {
+  border: 10px solid #FFD500;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
 footer {
   background-color: #FFD500; }
 
