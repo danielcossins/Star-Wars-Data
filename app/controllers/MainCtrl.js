@@ -4,11 +4,14 @@ app.controller("MainCtrl",
     console.log($location.path());
     $scope.stuff = [];
 
-
-    $http.get("http://swapi.co/api/people/1/")
-    .then(function(data){
-      console.log(data);
-      $scope.stuff.push(data.data);
-    });
+    var count = 1;
+    for(var i=0; i<10; i++){
+      $http.get("http://swapi.co/api/people/" + count)
+      .then(function(data){
+        console.log(data);
+        $scope.stuff.push(data.data);
+      });
+      count++;
+    }
   }
 ]);
