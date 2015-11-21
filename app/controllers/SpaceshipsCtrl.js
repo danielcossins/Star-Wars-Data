@@ -1,4 +1,4 @@
-app.controller("SpeciesCtrl", 
+app.controller("SpaceshipsCtrl", 
   ["$scope", "$http", "$location", "GetAPI",
   function($scope, $http, $location, GetAPI) {
     console.log($location.path());
