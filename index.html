@@ -4,15 +4,26 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <!-- CodeDrops -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
   <title>Star Data</title>
 </head>
 
 <body ng-app="StarWars" ng-controller="RootCtrl">
-  <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black; border: 0px solid black;">
+  <nav class="navbar navbar-default navbar-fixed-top cl-effect-7" style="background-color: black; border: 0px solid black;">
     <div class="container">
-      <img src="images/embed.png" class="middle">
+      <img src="images/embed.png" class="middle" style="max-width: 100%;">
     </div>
-  <input type="test" ng-model="search">
+  <input type="test" ng-model="search" id="search" class="middle">
+    <div class="middle" id="header">
+      <a href="#">Chatoyant</a>
+      <a href="#">Ineffable</a>
+      <a href="#">Efficiency</a>
+      <a href="#">Mellifluous</a>
+      <a href="#">Serendipity</a>
+    </div>
   </nav>
   <div ng-view style="margin-top: 150px;">
     
