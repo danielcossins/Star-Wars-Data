@@ -1,6 +1,5 @@
 app.factory("GetAPI", ["$http", "$q", function($http, $q){
   return function(type, numOfCalls){
-    console.log($q);
     var deferred = $q.defer();
     var storageArr = [];
     var count = 1;

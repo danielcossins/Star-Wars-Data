@@ -13,7 +13,10 @@ app.controller("MainCtrl",
     //   });
     //   count++;
     // }
-    console.log(GetAPI("people", 5));
+    var promise = GetAPI("people", 2);
+    promise.then(function(data){
+      $scope.stuff = data;
+    });
 
 
 
