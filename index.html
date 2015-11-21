@@ -7,11 +7,12 @@
   <title>Star Data</title>
 </head>
 
-<body ng-app="StarWars">
+<body ng-app="StarWars" ng-controller="RootCtrl">
   <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black; border: 0px solid black;">
     <div class="container">
       <img src="images/embed.png" class="middle">
     </div>
+  <input type="test" ng-model="search">
   </nav>
   <div ng-view style="margin-top: 150px;">
     
@@ -28,6 +29,7 @@
 
   <script src="app/app.js"></script>
   <script src="app/controllers/MainCtrl.js"></script>
+  <script src="app/controllers/RootCtrl.js"></script>
   <script src="app/factories/GetAPI.js"></script>
 </body>
 
