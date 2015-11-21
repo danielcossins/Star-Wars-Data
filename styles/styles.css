@@ -31,7 +31,8 @@ body {
   width: 100%; }
 
 #header a {
-  color: #FFD500; }
+  color: #FFD500;
+  text-decoration: none; }
 
 footer {
   background-color: #FFD500; }
