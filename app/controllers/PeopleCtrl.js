@@ -1,6 +1,6 @@
 app.controller("PeopleCtrl", 
-  ["$scope", "$http", "$location", "GetAPI", "GetOneData",
-  function($scope, $http, $location, GetAPI, GetOneData) {
+  ["$scope", "$http", "$location", "$window", "GetAPI", "GetOneData",
+  function($scope, $http, $location, $window, GetAPI, GetOneData) {
     console.log($location.path());
     $scope.stuff = [];
     var type = $location.path();
@@ -17,7 +17,7 @@ app.controller("PeopleCtrl",
     //   });
     // }
 
-    var numOfCalls = 20;
+    var numOfCalls = 5;
     var count = 1;
     Get();
 
@@ -40,22 +40,18 @@ app.controller("PeopleCtrl",
     }
     
 
-
-    // window.onscroll = function(ev) {
-    //   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    //     // you're at the bottom of the page
-    //     // GetAPI(type, 2).then(function(data){
-    //     //   $scope.stuff = data;
-    //     // });
-    //     console.log("I'm at the bottom");
-    //   }
-    // };
-
-    // $(window).scroll(function() {
-    //   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    //       console.log("bottom!");
-    //   }
-    // });
+    angular.element($window).bind("scroll", function() {
+      var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+      var body = document.body, html = document.documentElement;
+      var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+      windowBottom = windowHeight + window.pageYOffset;
+      if (windowBottom >= docHeight) {
+          console.log('bottom reached');
+          GetOneData(type, count).then(function(data){
+            $scope.stuff.push(data);
+          });
+      }
+    });
 
   }
 ]);
