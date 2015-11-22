@@ -1,17 +1,19 @@
 app.controller("PeopleCtrl", 
-  ["$scope", "$http", "$location", "GetAPI",
-  function($scope, $http, $location, GetAPI) {
+  ["$scope", "$http", "$location", "GetAPI", "GetOneData",
+  function($scope, $http, $location, GetAPI, GetOneData) {
     console.log($location.path());
     $scope.stuff = [];
     var type = $location.path();
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    var promise = GetAPI(type, 2);
-    promise.then(function(data){
-      $scope.stuff = data;
+    // var promise = GetAPI(type, 2);
+    // promise.then(function(data){
+    //   $scope.stuff = data;
+    // });
+    GetOneData(type, 45).then(function(data){
+      $scope.stuff.push(data);
     });
-
 
 
     // window.onscroll = function(ev) {
