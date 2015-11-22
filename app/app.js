@@ -20,7 +20,7 @@ app.config(['$routeProvider',
         controller: 'VehiclesCtrl'
       })
       .when('/people', {
-        templateUrl: 'partials/people.html',
+        templateUrl: 'partials/main.html',
         controller: 'PeopleCtrl'
       })
       .when('/films', {
