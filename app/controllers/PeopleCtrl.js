@@ -11,9 +11,29 @@ app.controller("PeopleCtrl",
     // promise.then(function(data){
     //   $scope.stuff = data;
     // });
-    GetOneData(type, 45).then(function(data){
-      $scope.stuff.push(data);
-    });
+    // for(var i=0; i<20; i++){
+    //   GetOneData(type, i).then(function(data){
+    //     $scope.stuff.push(data);
+    //   });
+    // }
+
+    var numOfCalls = 20;
+    var count = 1;
+    Get();
+
+    function Get(){
+      if(count>numOfCalls){
+        return;
+      }
+      $http.get("http://swapi.co/api/" + type + "/" + count)
+      .then(function(data){
+        console.log(data);
+        count++;
+        $scope.stuff.push(data.data);
+        Get();
+      });
+    }
+    
 
 
     // window.onscroll = function(ev) {
