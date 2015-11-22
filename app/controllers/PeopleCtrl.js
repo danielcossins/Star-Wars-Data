@@ -7,16 +7,6 @@ app.controller("PeopleCtrl",
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    // var promise = GetAPI(type, 2);
-    // promise.then(function(data){
-    //   $scope.stuff = data;
-    // });
-    // for(var i=0; i<20; i++){
-    //   GetOneData(type, i).then(function(data){
-    //     $scope.stuff.push(data);
-    //   });
-    // }
-
     var numOfCalls = 5;
     var count = 1;
     Get();
