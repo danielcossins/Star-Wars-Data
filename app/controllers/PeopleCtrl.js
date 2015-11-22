@@ -31,6 +31,11 @@ app.controller("PeopleCtrl",
         count++;
         $scope.stuff.push(data.data);
         Get();
+      },
+      function(error) {
+        console.log(error);
+        count++;
+        Get();
       });
     }
     
