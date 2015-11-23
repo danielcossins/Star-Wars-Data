@@ -9,15 +9,15 @@ app.config(['$routeProvider',
       })
       .when('/planets', {
         templateUrl: 'partials/planets.html',
-        controller: 'PlanetsCtrl'
+        controller: 'PeopleCtrl'
       })
       .when('/starships', {
         templateUrl: 'partials/spaceships.html',
-        controller: 'SpaceshipsCtrl'
+        controller: 'PeopleCtrl'
       })
       .when('/vehicles', {
         templateUrl: 'partials/vehicles.html',
-        controller: 'VehiclesCtrl'
+        controller: 'PeopleCtrl'
       })
       .when('/people', {
         templateUrl: 'partials/people.html',
@@ -29,7 +29,7 @@ app.config(['$routeProvider',
       })
       .when('/species', {
         templateUrl: 'partials/species.html',
-        controller: 'SpeciesCtrl'
+        controller: 'PeopleCtrl'
       })
       .otherwise({
         redirectTo: '/'
