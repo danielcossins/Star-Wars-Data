@@ -1,13 +1,13 @@
 app.controller("PlanetsCtrl", 
-  ["$scope", "$http", "$location", "$window", "GetAPI", "GetOneData",
-  function($scope, $http, $location, $window, GetAPI, GetOneData) {
+  ["$scope", "$http", "$location", "$window", "GetAPI", "GetOneData", "SimplePromise",
+  function($scope, $http, $location, $window, GetAPI, GetOneData, SimplePromise) {
     console.log($location.path());
     $scope.stuff = [];
     var type = $location.path();
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    var numOfCalls = 1;
+    var numOfCalls = 5;
     var count = 1;
     Get();
 
@@ -18,22 +18,10 @@ app.controller("PlanetsCtrl",
       $http.get("http://swapi.co/api/" + type + "/" + count)
       .then(function(data){
         console.log(data);
-        console.log(data.data.residents);
-        for(var i=0; i<data.data.residents.length; i++){
-          console.log(data.data.residents[i]);
-          $http.get(data.data.residents[i])
-          .then(function(newData){
-            console.log(newData);
-            data.data.residents[i] = newData.data.name;
-            console.log(data.data.residents[i]);
-          },
-          function(error){
-            console.log(error);
-          });
-        }
-        count++;
+        // data.data.residents = ChangeArray(data.data.residents, data.data.residents.length, data.data.residents[0]);
+        //recursive function
         $scope.stuff.push(data.data);
-        console.log(data.data);
+        count++;
         Get();
       },
       function(error) {
@@ -42,6 +30,19 @@ app.controller("PlanetsCtrl",
         Get();
       });
     }
+
+    // function ChangeArray(arrayToChange, numberOfCalls, url){
+    //   if(index > numberOfCalls){
+    //     return arrayToChange;
+    //   }
+    //   SimplePromise(url)
+    //   .then(function(newData){
+    //     console.log(newData);
+    //     arrayToChange[index] = newData.name;
+    //     index++;
+    //     ChangeArray(arrayToChange, numberOfCalls, arrayToChange[index]);
+    //   });
+    // }
 
 
     angular.element($window).bind("scroll", function() {
