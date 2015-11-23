@@ -18,6 +18,9 @@ app.controller("PlanetsCtrl",
       $http.get("http://swapi.co/api/" + type + "/" + count)
       .then(function(data){
         console.log(data);
+        for(var i=0; i<data.data.residents.length; i++){
+          // data.data.residents[i] = 
+        }
         count++;
         $scope.stuff.push(data.data);
         Get();
@@ -28,7 +31,7 @@ app.controller("PlanetsCtrl",
         Get();
       });
     }
-    
+
 
     angular.element($window).bind("scroll", function() {
       var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
