@@ -35,7 +35,7 @@ app.controller("SpeciesCtrl",
       var body = document.body, html = document.documentElement;
       var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
       windowBottom = windowHeight + window.pageYOffset;
-      if (windowBottom >= docHeight) {
+      if (windowBottom >= docHeight-1) {
           console.log('bottom reached');
           GetOneData(type, count).then(function(data){
             $scope.stuff.push(data);
