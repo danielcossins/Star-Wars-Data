@@ -10,6 +10,12 @@ body{
     // font-family: Arial;
     font-family: 'codropsicons';
 }
+// h1 {
+//     font-family: inherit;
+//     font-weight: bold;
+//     line-height: 1.1;
+//     color: inherit;
+// }
 
 .middle{
   display: block;
@@ -26,11 +32,17 @@ body{
 }
 
 .infoDiv{
+  .title{
+    font-weight: bold;
+    background-color: $primary;
+    color: black;
+  }
   border: 10px solid $primary;
   // background-color: $primary;
   border-radius: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
+  // font-weight: bold !important;
 }
 
 #search{

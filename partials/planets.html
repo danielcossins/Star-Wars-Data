@@ -1,3 +1,18 @@
 <div class="middle font infoDiv" ng-repeat="thing in stuff | filter: search">
-  <h3 ng-repeat="(key, value) in thing">{{key}}: {{value}}</h3>
+  <!-- <h3 ng-repeat="(key, value) in thing">{{key}}: {{value}}</h3> -->
+  <h1 class="title">{{thing.name}}</h1>
+  <h3 ng-repeat="(key, value) in thing" ng-if="key != 'name' && key != 'films' && key != 'created' && key != 'residents' && key != 'edited' && key != 'url'"><strong>{{key}}:</strong> {{value}}</h3>
+  <!-- climate: "temperate"
+  created: "2014-12-10T11:35:48.479000Z"
+  diameter: "12500"
+  edited: "2014-12-20T20:58:18.420000Z"
+  films: Array[2]
+  gravity: "1 standard"
+  name: "Alderaan"
+  orbital_period: "364"
+  population: "2000000000"
+  residents: Array[3]
+  rotation_period: "24"
+  surface_water: "40"
+  terrain: "grasslands, mountains" -->
 </div>
