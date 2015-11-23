@@ -7,7 +7,7 @@ app.controller("PeopleCtrl",
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    var numOfCalls = 5;
+    var numOfCalls = 20;
     var count = 1;
     Get();
 
@@ -37,9 +37,11 @@ app.controller("PeopleCtrl",
       windowBottom = windowHeight + window.pageYOffset;
       if (windowBottom >= docHeight-1) {
           console.log('bottom reached');
-          GetOneData(type, count).then(function(data){
-            $scope.stuff.push(data);
-          });
+          // GetOneData(type, count).then(function(data){
+          //   $scope.stuff.push(data);
+          // });
+          numOfCalls+=10;
+          Get();
           count++;
       }
     });

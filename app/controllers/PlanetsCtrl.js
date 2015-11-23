@@ -7,7 +7,7 @@ app.controller("PlanetsCtrl",
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    var numOfCalls = 5;
+    var numOfCalls = 20;
     var count = 1;
     Get();
 
