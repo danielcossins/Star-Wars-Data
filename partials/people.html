@@ -1,3 +1,4 @@
 <div class="middle font infoDiv" ng-repeat="thing in stuff | filter: search">
-  <h3 ng-repeat="(key, value) in thing">{{key}}: {{value}}</h3>
+  <h1 class="title">{{thing.name}}</h1>
+  <h3 class="data" ng-repeat="(key, value) in thing" ng-if="key != 'name' && key != 'url' && key != 'created' && key != 'edited' && key != 'homeworld' && key != 'species' && key != 'vehicles' && key != 'starships' && key != 'films'"><strong>{{key}}:</strong> {{value}}</h3>
 </div>
