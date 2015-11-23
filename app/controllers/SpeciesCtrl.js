@@ -39,8 +39,8 @@ app.controller("SpeciesCtrl",
           console.log('bottom reached');
           GetOneData(type, count).then(function(data){
             $scope.stuff.push(data);
-            count++;
           });
+          count++;
       }
     });
 

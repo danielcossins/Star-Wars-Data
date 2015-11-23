@@ -11,7 +11,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/planets.html',
         controller: 'PlanetsCtrl'
       })
-      .when('/spaceships', {
+      .when('/starships', {
         templateUrl: 'partials/spaceships.html',
         controller: 'SpaceshipsCtrl'
       })
