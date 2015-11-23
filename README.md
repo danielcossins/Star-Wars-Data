@@ -1,5 +1,5 @@
 #Star-Wars-Data
-A web app for browsing various statistics from Star Wars. The app can be viewed <a href="https://star-data.firebaseapp.com">here</a>. This app uses the <a href="https://swapi.co/">SWAPI</a> API.
+A web app for browsing various statistics from Star Wars.<!--  The app can be viewed <a href="https://star-data.firebaseapp.com">here</a>. --> This app uses the <a href="https://swapi.co/">SWAPI</a> API.
 
 ###Tools used
 * AngularJS
