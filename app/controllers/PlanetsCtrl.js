@@ -7,7 +7,7 @@ app.controller("PlanetsCtrl",
     type = type.substr(0, 0) + '' + type.substr(0 + 1);
     console.log(type);
 
-    var numOfCalls = 5;
+    var numOfCalls = 1;
     var count = 1;
     Get();
 
@@ -18,11 +18,22 @@ app.controller("PlanetsCtrl",
       $http.get("http://swapi.co/api/" + type + "/" + count)
       .then(function(data){
         console.log(data);
+        console.log(data.data.residents);
         for(var i=0; i<data.data.residents.length; i++){
-          // data.data.residents[i] = 
+          console.log(data.data.residents[i]);
+          $http.get(data.data.residents[i])
+          .then(function(newData){
+            console.log(newData);
+            data.data.residents[i] = newData.data.name;
+            console.log(data.data.residents[i]);
+          },
+          function(error){
+            console.log(error);
+          });
         }
         count++;
         $scope.stuff.push(data.data);
+        console.log(data.data);
         Get();
       },
       function(error) {
