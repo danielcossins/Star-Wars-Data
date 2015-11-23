@@ -25,7 +25,20 @@ body{
   color: $primary;
 }
 
+
 .infoDiv{
+  .title{
+    font-weight: bold;
+    font-size: 3em;
+    color: black;
+    background-color: $primary;
+  }
+  // .data:nth-child(2n) {  
+  //   background-color: black;
+  // }
+  .data{
+    border-bottom: 2px solid $secondary;
+  }
   border: 10px solid $primary;
   // background-color: $primary;
   border-radius: 20px;
